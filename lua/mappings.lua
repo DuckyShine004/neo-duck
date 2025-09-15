@@ -57,5 +57,9 @@ map("n", "<leader>tL", "<cmd>Trouble loclist toggle<cr>", { desc = "Trouble loca
 map("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>", { desc = "Trouble quick fix list" })
 map("n", "<leader>tT", "<cmd>Trouble todo toggle focus=true win.position=right<cr>", { desc = "Trouble todo list" })
 
+-- Code snapshot
+map({ "x" }, "<leader>cc", ":'<,'>CodeSnap<cr>", { desc = "Save selected code snapshot into clipboard" })
+map({ "x" }, "<leader>cs", ":'<,'>CodeSnapSave<cr>", { desc = "Save selected code snapshot in ~/Pictures" })
+
 -- LSP
 -- map("n", "<leader>")

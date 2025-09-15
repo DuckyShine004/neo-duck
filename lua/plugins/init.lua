@@ -70,4 +70,12 @@ return {
       },
     },
   },
+
+  -- {
+  --   "tamton-aquib/zone.nvim",
+  --   config = function()
+  --     require "configs.zone"
+  --   end,
+  -- },
+  { "mistricky/codesnap.nvim", build = "make", opts = require "configs/codesnap" },
 }
