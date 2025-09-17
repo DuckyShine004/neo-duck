@@ -98,5 +98,7 @@ return {
   --     require "configs.zone"
   --   end,
   -- },
+  -- { "tamton-aquib/mpv.nvim", config = true },
+
   { "mistricky/codesnap.nvim", build = "make", opts = require "configs/codesnap" },
 }

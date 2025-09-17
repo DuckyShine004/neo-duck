@@ -13,6 +13,7 @@ o.hidden = true
 o.swapfile = false
 o.encoding = "utf-8"
 o.mouse = "a"
+o.winborder = "single"
 
 -- Indent
 o.tabstop = 4

@@ -7,29 +7,24 @@ base.defaults()
 
 local lspconfig = require "lspconfig"
 
+local function on_attach(client, bufnr)
+  -- keep signature help enabled
+  base.on_attach(client, bufnr)
+end
+
+local capabilities = base.capabilities
+
 lspconfig.clangd.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = nil
-    base.on_attach(client, bufnr)
-  end,
-  capabilities = base.capabilities,
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 lspconfig.cmake.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = nil
-    base.on_attach(client, bufnr)
-  end,
-  capabilities = base.capabilities,
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 lspconfig.pyright.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = nil
-    base.on_attach(client, bufnr)
-  end,
-  capabilities = base.capabilities,
-  filetypes = { "python" },
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
-
--- read :h vim.lsp.config for changing options of lsp servers
