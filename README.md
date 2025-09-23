@@ -75,7 +75,6 @@ To verify that everything is set up correctly, run the following command in Neov
 > [!NOTE]
 > If you want to build on top of my configuration, delete the `.git` directory, so your changes won't conflict with future updates. However, if you'd like to stay up-to-date with my changes, keep it.
 
-Optional, but if you want to add your own plugins, it's best that you delete the `.git` directory, however, if you like my configuration that much and would like to be up to date with my changes, then keep it.
 ## Plugins and Screenshots
 These are the additional plugins I use on top of NvChad's defaults:
 * [alpha.nvim](https://github.com/goolord/alpha-nvim)
