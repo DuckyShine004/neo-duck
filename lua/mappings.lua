@@ -61,14 +61,16 @@ map("n", "<leader>tT", "<cmd>Trouble todo toggle focus=true win.position=right<c
 map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit load LazyGit" })
 
 -- Neovim signature help
--- map({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature method signature", buffer = 0 })
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     vim.keymap.set({ "i", "n" }, "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "LSP signature help" })
   end,
 })
 
--- Code snapshot
+-- Markdown Preview
+map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown preview markdown file live" })
+
+-- Code Snapshot
 map({ "x" }, "<leader>cc", ":'<,'>CodeSnap<cr>", { desc = "Save selected code snapshot into clipboard" })
 map({ "x" }, "<leader>cs", ":'<,'>CodeSnapSave<cr>", { desc = "Save selected code snapshot in ~/Pictures" })
 
