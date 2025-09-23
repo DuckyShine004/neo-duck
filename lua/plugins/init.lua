@@ -32,6 +32,23 @@ return {
   },
 
   {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "nvim-lua/plenary.nvim",
+    },
+    opts = function(_, opts)
+      require "configs.telescope"
+      return opts
+    end,
+  },
+
+  -- {
+  --   "nvim-telescope/telescope-media-files.nvim",
+  --   dependencies = { "nvim-telescope/telescope.nvim" },
+  -- },
+
+  {
     "kdheepak/lazygit.nvim",
     lazy = false,
     cmd = {
@@ -41,15 +58,16 @@ return {
       "LazyGitFilter",
       "LazyGitFilterCurrentFile",
     },
-    -- optional for floating window border decoration
+
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    },
+    -- keys = {
+    --   { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    -- },
   },
 
   {
@@ -79,6 +97,8 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = { "OXY2DEV/markview.nvim" },
+    lazy = false,
     opts = {
       ensure_installed = {
         "vim",
@@ -90,6 +110,20 @@ return {
         "c",
       },
     },
+  },
+
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+
+    -- For `nvim-treesitter` users.
+    priority = 49,
+
+    -- For blink.cmp's completion
+    -- source
+    -- dependencies = {
+    --     "saghen/blink.cmp"
+    -- },
   },
 
   -- {
