@@ -46,5 +46,8 @@ opt.termguicolors = true
 opt.fillchars = { eob = " " }
 opt.wrap = false
 
+-- Tab
+opt.switchbuf = { "useopen", "split" }
+
 cmd "filetype plugin indent on"
 cmd "syntax on"

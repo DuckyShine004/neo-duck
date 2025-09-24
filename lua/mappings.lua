@@ -13,12 +13,12 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- Lazy plugins
-map("n", "<leader>ls", plugin_fn.sync_all_plugins, { desc = "Plugins sync" })
-map("n", "<leader>la", plugin_fn.load_all_plugins, { desc = "Plugins load" })
+map("n", "<leader>ls", plugin_fn.sync_all_plugins, { desc = "Plugins sync plugins" })
+map("n", "<leader>la", plugin_fn.load_all_plugins, { desc = "Plugins load plugins" })
 
 -- File
-map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "File save" })
-map({ "n", "i", "v" }, "<C-q>", "<cmd>q<cr>", { desc = "File close" })
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "File save" })
+-- map({ "n", "i", "v" }, "<C-q>", "<cmd>q<cr>", { desc = "File close" })
 map("i", "<C-H>", "<C-w>", { desc = "Delete previous word in insert mode" })
 
 -- Tree
@@ -74,5 +74,6 @@ map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown prev
 map({ "x" }, "<leader>cc", ":'<,'>CodeSnap<cr>", { desc = "Save selected code snapshot into clipboard" })
 map({ "x" }, "<leader>cs", ":'<,'>CodeSnapSave<cr>", { desc = "Save selected code snapshot in ~/Pictures" })
 
--- LSP
--- map("n", "<leader>")
+-- Neovim Tab
+map("n", "<leader>nt", "<cmd>tabnew<cr>", { desc = "Tab create new tab" })
+map("n", "<leader>nT", "<cmd>tabclose<cr>", { desc = "Tab close tab" })
