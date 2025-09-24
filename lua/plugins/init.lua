@@ -148,6 +148,12 @@ return {
   },
 
   {
+    "3rd/image.nvim",
+    event = "VeryLazy",
+    opts = "configs.image",
+  },
+
+  {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
     dependencies = {
