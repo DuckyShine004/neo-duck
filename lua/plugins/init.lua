@@ -20,7 +20,18 @@ return {
 
   {
     "folke/trouble.nvim",
-    opts = {},
+    opts = require "configs.trouble",
+  },
+
+  {
+    "folke/twilight.nvim",
+    opts = require "configs.twilight",
+  },
+
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    opts = require "configs.zen",
   },
 
   {
@@ -134,6 +145,18 @@ return {
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
+  },
+
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {
+      -- configuration goes here
+    },
   },
 
   -- {

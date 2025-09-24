@@ -46,12 +46,18 @@ map("n", "<leader>tt", toggle_fn.toggle_transparency, { desc = "Toggle transpare
 map("n", "<leader>fr", telescope.lsp_references, { desc = "Telescope find all references" })
 map("n", "<leader>fd", telescope.diagnostics, { desc = "Telescope find project diagnostics" })
 map("n", "<leader>fD", telescope_fn.buffer_diagnostics, { desc = "Telescope find buffer diagnostics" })
-map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Telescope search todo list" })
+map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Telescope search TODO list" })
+map("n", "<leader>fsd", telescope_fn.document_symbols, { desc = "Telescope find workspace symbols" })
 
 -- Trouble
 map("n", "<leader>td", "<cmd>Trouble diagnostics toggle focus=true<cr>", { desc = "Trouble project diagnostics" })
 map("n", "<leader>tD", "<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>", { desc = "Trouble buffer diagnostics" })
-map("n", "<leader>ts", "<cmd>Trouble symbols toggle focus=true win.position=right<cr>", { desc = "Trouble project symbols" })
+map(
+  "n",
+  "<leader>ts",
+  "<cmd>Trouble lsp_document_symbols toggle win.type=split win.position=right<cr>",
+  { desc = "Trouble document symbols" }
+)
 map("n", "<leader>tl", "<cmd>Trouble lsp toggle focus=true win.position=right<cr>", { desc = "Trouble LSP symbol and tag tree" })
 map("n", "<leader>tL", "<cmd>Trouble loclist toggle<cr>", { desc = "Trouble location list" })
 map("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>", { desc = "Trouble quick fix list" })
@@ -77,3 +83,6 @@ map({ "x" }, "<leader>cs", ":'<,'>CodeSnapSave<cr>", { desc = "Save selected cod
 -- Neovim Tab
 map("n", "<leader>nt", "<cmd>tabnew<cr>", { desc = "Tab create new tab" })
 map("n", "<leader>nT", "<cmd>tabclose<cr>", { desc = "Tab close tab" })
+
+-- Zen Mode
+map("n", "<leader>zz", "<cmd>ZenMode<cr>", { desc = "Toggle Zen Mode" })
