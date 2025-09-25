@@ -11,11 +11,7 @@ return {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    opts = {},
   },
 
   {
@@ -54,11 +50,6 @@ return {
     end,
   },
 
-  -- {
-  --   "nvim-telescope/telescope-media-files.nvim",
-  --   dependencies = { "nvim-telescope/telescope.nvim" },
-  -- },
-
   {
     "kdheepak/lazygit.nvim",
     lazy = false,
@@ -73,18 +64,12 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    -- keys = {
-    --   { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    -- },
   },
 
   {
     "nvim-neorg/neorg",
-    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-    version = "*", -- Pin Neorg to the latest stable release
+    lazy = false,
+    version = "*",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("neorg").setup {
@@ -101,7 +86,6 @@ return {
           },
         },
       }
-      --   vim.opt.conceallevel = 2
     end,
   },
 
@@ -127,9 +111,6 @@ return {
     end,
   },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = { "OXY2DEV/markview.nvim" },
@@ -148,17 +129,14 @@ return {
   },
 
   {
+    "danymat/neogen",
+    config = true,
+  },
+
+  {
     "OXY2DEV/markview.nvim",
     lazy = false,
-
-    -- For `nvim-treesitter` users.
     priority = 49,
-
-    -- For blink.cmp's completion
-    -- source
-    -- dependencies = {
-    --     "saghen/blink.cmp"
-    -- },
   },
 
   {
@@ -190,14 +168,6 @@ return {
   {
     "DuckyShine004/duck-type.nvim",
   },
-
-  -- {
-  --   "tamton-aquib/zone.nvim",
-  --   config = function()
-  --     require "configs.zone"
-  --   end,
-  -- },
-  -- { "tamton-aquib/mpv.nvim", config = true },
 
   { "mistricky/codesnap.nvim", build = "make", opts = require "configs/codesnap" },
 }

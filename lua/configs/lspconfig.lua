@@ -35,16 +35,6 @@ vim.lsp.config("pyright", {
 
 vim.lsp.config("omnisharp", {
   on_init = on_init,
-  -- on_attach = function(client, bufnr)
-  --   if client.server_capabilities.semanticTokensProvider and client.server_capabilities.semanticTokensProvider.full then
-  --     client.server_capabilities.semanticTokensProvider = {
-  --       full = true,
-  --       range = true,
-  --       legend = { tokenTypes = {}, tokenModifiers = {} },
-  --     }
-  --   end
-  --   on_attach(client, bufnr)
-  -- end,
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { omni_command, "--languageserver", "--hostPID", tostring(pid) },
