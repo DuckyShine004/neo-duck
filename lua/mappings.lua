@@ -9,16 +9,19 @@ local telescope_fn = require "functions.telescope_fn"
 
 local map = vim.keymap.set
 
+-- NVIM
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+
+-- Options
+map("n", "<leader>kbw", "<cmd>set wrap!<cr>", { desc = "Options toggle wrap mode" })
 
 -- Lazy plugins
 map("n", "<leader>ls", plugin_fn.sync_all_plugins, { desc = "Plugins sync plugins" })
 map("n", "<leader>la", plugin_fn.load_all_plugins, { desc = "Plugins load plugins" })
 
 -- File
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "File save" })
--- map({ "n", "i", "v" }, "<C-q>", "<cmd>q<cr>", { desc = "File close" })
+map({ "n", "i", "v" }, "<C-q>", "<cmd>q<cr>", { desc = "File close" })
 map("i", "<C-H>", "<C-w>", { desc = "Delete previous word in insert mode" })
 
 -- Tree

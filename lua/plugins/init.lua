@@ -82,6 +82,30 @@ return {
   },
 
   {
+    "nvim-neorg/neorg",
+    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = "*", -- Pin Neorg to the latest stable release
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
+              default_workspace = "notes",
+            },
+          },
+        },
+      }
+      --   vim.opt.conceallevel = 2
+    end,
+  },
+
+  {
     "stevearc/conform.nvim",
     event = "BufWritePre",
     opts = require "configs.conform",
@@ -161,6 +185,10 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = require "configs.leetcode",
+  },
+
+  {
+    "DuckyShine004/duck-type.nvim",
   },
 
   -- {
