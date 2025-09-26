@@ -7,12 +7,7 @@ local M = {}
 
 M.base46 = {
   theme = "ayu_dark",
-  -- transparency = true,
 }
-
--- M.nvdash = {
---   load_on_startup = true,
--- }
 
 -- theme: ~
 -- |values| = default, vscode, vscode_colored, minimal

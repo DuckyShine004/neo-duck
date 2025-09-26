@@ -39,6 +39,13 @@ return {
   },
 
   {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require "configs.gitsigns"
+    end,
+  },
+
+  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
