@@ -6,6 +6,7 @@ local options = {
     -- cmake = { "cmake_format" },
     -- css = { "prettier" },
     -- html = { "prettier" },
+    zsh = { "shfmt" },
     sh = { "shfmt" },
     cs = { "csharpier" },
     yaml = { "prettierd", "prettier" },
