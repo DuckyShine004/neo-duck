@@ -174,6 +174,7 @@ return {
 
   {
     "DuckyShine004/duck-type.nvim",
+    opts = require "configs.ducktype",
   },
 
   { "mistricky/codesnap.nvim", build = "make", opts = require "configs/codesnap" },
