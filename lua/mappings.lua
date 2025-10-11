@@ -89,3 +89,7 @@ map("n", "<leader>nT", "<cmd>tabclose<cr>", { desc = "Tab close tab" })
 
 -- Zen Mode
 map("n", "<leader>zz", "<cmd>ZenMode<cr>", { desc = "Toggle Zen Mode" })
+
+-- Latex
+map("n", "<leader>ll", "<cmd>VimtexCompile<cr>")
+map("n", "<leader>lv", "<cmd>VimtexView<cr>")

@@ -157,6 +157,24 @@ return {
   },
 
   {
+    "lervag/vimtex",
+    ft = { "tex", "plaintex", "latex" },
+    init = function()
+      vim.g.vimtex_compiler_method = "latexmk"
+      vim.g.vimtex_quickfix_open_on_warning = 0
+
+      if vim.loop.os_uname().sysname == "Linux" then
+        vim.g.vimtex_view_method = "zathura"
+      else
+        vim.g.vimtex_view_method = "skim"
+      end
+
+      -- Fast mappings: \ll build, \lv view, \le errors, \lk stop
+      vim.g.maplocalleader = ","
+    end,
+  },
+
+  {
     "3rd/image.nvim",
     event = "VeryLazy",
     opts = "configs.image",

@@ -48,4 +48,40 @@ vim.lsp.config("omnisharp", {
   analyze_open_documents_only = false,
 })
 
+vim.lsp.config("texlab", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    texlab = {
+      build = {
+        executable = "latexmk",
+        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+        onSave = false,
+      },
+      forwardSearch = {
+        executable = "zathura",
+        args = { "%p", "--synctex-forward", "%l:1:%f" },
+      },
+      chktex = { onOpenAndSave = true },
+      latexFormatter = "latexindent",
+      latexindent = { modifyLineBreaks = true },
+    },
+  },
+})
+
+vim.lsp.config("ltex", {
+  cmd = { "ltex-ls-plus" },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ltex = {
+      language = "en-NZ",
+      additionalRules = { enablePickyRules = true },
+      disabledRules = { ["en"] = { "MORFOLOGIK_RULE_EN_AU" } },
+      checkFrequency = "edit",
+      completionEnabled = true,
+    },
+  },
+})
+
 vim.lsp.enable { "clangd", "cmake", "pyright", "omnisharp" }

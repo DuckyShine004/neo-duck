@@ -11,6 +11,9 @@ local options = {
     sh = { "shfmt" },
     cs = { "csharpier" },
     yaml = { "prettierd", "prettier" },
+    tex = { "latexindent" },
+    plaintex = { "latexindent" },
+    bib = { "latexindent" },
   },
 
   format_on_save = {
