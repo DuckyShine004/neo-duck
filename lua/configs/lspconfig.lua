@@ -28,6 +28,18 @@ vim.lsp.config("cmake", {
   capabilities = capabilities,
 })
 
+vim.lsp.config("glsl_analyzer", {
+  on_init = on_init,
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+vim.lsp.config("jdtls", {
+  on_init = on_init,
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 vim.lsp.config("pyright", {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -84,4 +96,4 @@ vim.lsp.config("ltex", {
   },
 })
 
-vim.lsp.enable { "clangd", "cmake", "pyright", "omnisharp" }
+vim.lsp.enable { "clangd", "cmake", "pyright", "omnisharp", "glsl_analyzer" }

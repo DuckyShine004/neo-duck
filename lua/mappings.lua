@@ -93,3 +93,6 @@ map("n", "<leader>zz", "<cmd>ZenMode<cr>", { desc = "Toggle Zen Mode" })
 -- Latex
 map("n", "<leader>ll", "<cmd>VimtexCompile<cr>")
 map("n", "<leader>lv", "<cmd>VimtexView<cr>")
+
+-- Neogen
+map("n", "<leader>ng", "<cmd>Neogen<cr>")
