@@ -34,6 +34,12 @@ vim.lsp.config("glsl_analyzer", {
   capabilities = capabilities,
 })
 
+vim.lsp.config("jsonls", {
+  on_init = on_init,
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 vim.lsp.config("jdtls", {
   on_init = on_init,
   on_attach = on_attach,
@@ -96,4 +102,4 @@ vim.lsp.config("ltex", {
   },
 })
 
-vim.lsp.enable { "clangd", "cmake", "pyright", "omnisharp", "glsl_analyzer" }
+vim.lsp.enable { "clangd", "cmake", "pyright", "omnisharp", "glsl_analyzer", "jsonls" }

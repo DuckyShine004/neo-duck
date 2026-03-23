@@ -12,6 +12,7 @@ local map = vim.keymap.set
 -- NVIM
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("n", "x", '"_x')
 
 -- Options
 map("n", "<leader>kbw", "<cmd>set wrap!<cr>", { desc = "Options toggle wrap mode" })
@@ -72,7 +73,7 @@ map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit load LazyGit" })
 -- Neovim signature help
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
-    vim.keymap.set({ "i", "n" }, "<C-k>", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "LSP signature help" })
+    vim.keymap.set({ "i", "n" }, "<leader>tk", vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "LSP signature help" })
   end,
 })
 

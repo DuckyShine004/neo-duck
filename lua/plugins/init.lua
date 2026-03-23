@@ -119,6 +119,13 @@ return {
   },
 
   {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require "configs.linter"
+    end,
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = { "OXY2DEV/markview.nvim" },
     lazy = false,
@@ -195,5 +202,8 @@ return {
     opts = require "configs.ducktype",
   },
 
-  { "mistricky/codesnap.nvim", build = "make", opts = require "configs/codesnap" },
+  {
+    "mistricky/codesnap.nvim",
+    opts = require "configs.codesnap",
+  },
 }

@@ -59,3 +59,12 @@ auto_command({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "glsl"
   end,
 })
+
+auto_command({ "BufWritePost", "InsertLeave" }, {
+  group = groups.file_type_group,
+  callback = function(args)
+    if vim.bo[args.buf].filetype == "glsl" then
+      require("lint").try_lint()
+    end
+  end,
+})
