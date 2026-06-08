@@ -1,3 +1,10 @@
+vim.api.nvim_set_hl(0, "NvimTreeRootFolder", {
+  fg = "#89B4FA",
+  bg = "#313244",
+  italic = true,
+  bold = true,
+})
+
 local options = {
   filters = { dotfiles = false, git_ignored = false },
   disable_netrw = true,
@@ -12,7 +19,9 @@ local options = {
     preserve_window_proportions = true,
   },
   renderer = {
-    root_folder_label = false,
+    root_folder_label = function(path)
+      return "  " .. vim.fn.fnamemodify(path, ":t")
+    end,
     highlight_git = true,
     indent_markers = { enable = true },
     icons = {
