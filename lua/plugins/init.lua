@@ -1,12 +1,12 @@
 return {
-  {
-    "goolord/alpha-nvim",
-    event = "VimEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require "configs.alpha"
-    end,
-  },
+  -- {
+  --   "goolord/alpha-nvim",
+  --   event = "VimEnter",
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   config = function()
+  --     require "configs.alpha"
+  --   end,
+  -- },
 
   {
     "folke/todo-comments.nvim",
@@ -77,7 +77,7 @@ return {
     "nvim-neorg/neorg",
     lazy = false,
     version = "*",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-neorg/tree-sitter-norg", "nvim-neorg/tree-sitter-norg-meta" },
     config = function()
       require("neorg").setup {
         load = {
@@ -175,9 +175,6 @@ return {
       else
         vim.g.vimtex_view_method = "skim"
       end
-
-      -- Fast mappings: \ll build, \lv view, \le errors, \lk stop
-      vim.g.maplocalleader = ","
     end,
   },
 

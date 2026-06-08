@@ -1,3 +1,5 @@
+-- WARN: DEPRECATED- using nvdash instead, however, alpha is still viable
+
 local if_nil = vim.F.if_nil
 
 local alpha = require "alpha"
