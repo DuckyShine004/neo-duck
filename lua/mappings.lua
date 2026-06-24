@@ -2,6 +2,8 @@ require "nvchad.mappings"
 
 local telescope = require "telescope.builtin"
 
+local menu_fn = require "functions.menu_fn"
+
 local plugin_fn = require "functions.plugin_fn"
 local toggle_fn = require "functions.toggle_fn"
 
@@ -66,6 +68,12 @@ map("n", "<leader>tl", "<cmd>Trouble lsp toggle focus=true win.position=right<cr
 map("n", "<leader>tL", "<cmd>Trouble loclist toggle<cr>", { desc = "Trouble location list" })
 map("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>", { desc = "Trouble quick fix list" })
 map("n", "<leader>tT", "<cmd>Trouble todo toggle focus=true win.position=right<cr>", { desc = "Trouble todo list" })
+
+-- LSP
+map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+
+-- Menu
+map({ "n", "v", "x" }, "<C-t>", menu_fn.open_default_menu, { desc = "Open default menu" })
 
 -- LazyGit
 map("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit load LazyGit" })

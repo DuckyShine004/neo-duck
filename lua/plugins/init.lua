@@ -7,6 +7,14 @@ return {
   --     require "configs.alpha"
   --   end,
   -- },
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+  },
+
+  { "nvzone/menu", lazy = true },
 
   {
     "folke/todo-comments.nvim",

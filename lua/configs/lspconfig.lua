@@ -34,6 +34,65 @@ vim.lsp.config("glsl_analyzer", {
   capabilities = capabilities,
 })
 
+vim.lsp.config("rust_analyzer", {
+  on_init = on_init,
+  on_attach = on_attach,
+  capabilities = capabilities,
+
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      check = {
+        command = "clippy",
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+})
+
+vim.lsp.config("taplo", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+vim.lsp.config("vtsls", {
+  on_init = on_init,
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  },
+})
+
+vim.lsp.config("eslint", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  },
+})
+
+vim.lsp.config("emmet_language_server", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  },
+})
+
 vim.lsp.config("jsonls", {
   on_init = on_init,
   on_attach = on_attach,
@@ -102,4 +161,16 @@ vim.lsp.config("ltex", {
   },
 })
 
-vim.lsp.enable { "clangd", "cmake", "pyright", "omnisharp", "glsl_analyzer", "jsonls" }
+vim.lsp.enable {
+  "clangd",
+  "cmake",
+  "pyright",
+  "omnisharp",
+  "glsl_analyzer",
+  "vtsls",
+  "eslint",
+  "emmet_language_server",
+  "jsonls",
+  "rust_analyzer",
+  "taplo",
+}

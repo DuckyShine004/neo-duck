@@ -68,3 +68,12 @@ auto_command({ "BufWritePost", "InsertLeave" }, {
     end
   end,
 })
+
+auto_command("FileType", {
+  pattern = "typr",
+  callback = function()
+    require("cmp").setup.buffer {
+      enabled = false,
+    }
+  end,
+})
